@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-sitemap: https://gatsby-minimal.netlify.com/sitemap.xml
+sitemap: https://blog.reactconf.ir/sitemap.xml

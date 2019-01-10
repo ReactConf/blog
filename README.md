@@ -1,17 +1,16 @@
-# Gatsby Minimal Blog
+# Gatsby Reactconf Blog
 
-A minimal theme for Gatsby forked from [LekoArts](https://github.com/LeKoArts/).
+A minimal theme for Gatsby forked from [gatsby-minimal-blog](https://github.com/ahmadawais/gatsby-minimal-blog/).
 
-[Demo Website](https://gatsby-minimal.netlify.com/)
+[Demo Website](https://blog.reactconf.ir/)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ahmadawais/gatsby-minimal-blog)
+<a><img src="reactconf.png" width="100" height="138" /></a>
 
 ## Features
 
 - ⚛️ Gatsby v2.0.0
 - ✍️ Markdown Content
 - 💅 Styled Components
-- 🆕 Netlify Contact Form
 - 💠 Categories
 - 💤 Offline Support
 - 🔰 WebApp Manifest Support
@@ -32,7 +31,7 @@ Install [Node.js](https://nodejs.org/en/) >=9.10.0, the [Gatsby CLI](https://www
 To copy and install this starter run this command (with "project-name" being the name of your folder you wish to install it in):
 
 ```sh
-gatsby new project-name https://github.com/ahmadawais/gatsby-minimal-blog
+gatsby new project-name https://github.com/ReactConf/blog
 npm run dev
 ```
 

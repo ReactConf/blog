@@ -23,7 +23,7 @@ const Button = styled.button`
   svg {
     width: 20px;
     height: 20px;
-    margin-right: 0.75rem;
+    margin-left: 0.75rem;
     fill: white;
   }
 `;

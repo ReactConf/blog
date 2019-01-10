@@ -8,6 +8,8 @@ import { Layout, Wrapper, Header, Subline, SEO, PrevNext } from 'components';
 import { media } from '../utils/media';
 import config from '../../config/SiteConfig';
 import '../utils/prismjs-theme.css';
+import categoryName from '../utils/category-name';
+import moment from 'moment-jalaali';
 
 const Content = styled.article`
   grid-column: 2;
@@ -18,6 +20,10 @@ const Content = styled.article`
   background-color: ${props => props.theme.colors.bg};
   z-index: 9000;
   margin-top: -3rem;
+  p {
+    font-weight: 100;
+    margin: 0 0 1rem 0;
+  }
   @media ${media.tablet} {
     padding: 3rem 3rem;
   }
@@ -38,7 +44,6 @@ const Post = props => {
   const { slug, prev, next } = props.pageContext;
   const postNode = props.data.markdownRemark;
   const post = postNode.frontmatter;
-
   return (
     <Layout>
       <Wrapper>
@@ -50,8 +55,8 @@ const Post = props => {
         <Content>
           <Title>{post.title}</Title>
           <Subline>
-            {post.date} &mdash; {postNode.timeToRead} Min Read &mdash; In{' '}
-            <Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link>
+            {moment(post.date).format('jYYYY/jMM/jD')} &mdash; خواندن {postNode.timeToRead} دقیقه &mdash; در دسته بندی{' '}
+            <Link to={`/categories/${kebabCase(post.category)}`}>{categoryName[post.category]}</Link>
           </Subline>
           <PostContent dangerouslySetInnerHTML={{ __html: postNode.html }} />
           <PrevNext prev={prev} next={next} />
@@ -88,7 +93,7 @@ export const postQuery = graphql`
       excerpt
       frontmatter {
         title
-        date(formatString: "DD.MM.YYYY")
+        date
         category
       }
       timeToRead

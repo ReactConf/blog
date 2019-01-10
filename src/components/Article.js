@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
-
+import moment from 'moment-jalaali';
 import { Subline } from 'components';
+import categoryName from '../utils/category-name';
 
 const Post = styled.article`
   display: flex;
@@ -32,6 +33,7 @@ const Excerpt = styled.p`
   grid-column: -1 / 1;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  font-weight: 100;
 `;
 
 const Article = ({ title, date, excerpt, slug, timeToRead, category }) => {
@@ -44,8 +46,8 @@ const Article = ({ title, date, excerpt, slug, timeToRead, category }) => {
         <Link to={slug}>{title}</Link>
       </Title>
       <Subline>
-        {date} &mdash; {timeToRead} Min Read &mdash; In{' '}
-        <Link to={`/categories/${kebabCase(category)}`}>{category}</Link>
+        {moment(date).format('jYYYY/jMM/jD')} &mdash; خواندن {timeToRead} دقیقه &mdash; در دسته بندی{' '}
+        <Link to={`/categories/${kebabCase(category)}`}>{categoryName[category]}</Link>
       </Subline>
       <Excerpt>{excerpt}</Excerpt>
     </Post>

@@ -7,13 +7,45 @@ import React from 'react';
 import styled, { injectGlobal, ThemeProvider } from 'styled-components';
 import theme from '../../config/Theme';
 import { media } from '../utils/media';
+import moment from 'moment-jalaali';
 
 injectGlobal`
+@font-face {
+  font-family: Shabnam;
+  src: url('/fonts/Shabnam-FD.eot');
+  src: url('/fonts/Shabnam-FD.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/Shabnam-FD.woff2') format('woff2'),
+       url('/fonts/Shabnam-FD.woff') format('woff'),
+       url('/fonts/Shabnam-FD.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Shabnam;
+  src: url('/fonts/Shabnam-Bold-FD.eot');
+  src: url('/fonts/Shabnam-Bold-FD.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/Shabnam-Bold-FD.woff2') format('woff2'),
+       url('/fonts/Shabnam-Bold-FD.woff') format('woff'),
+       url('/fonts/Shabnam-Bold-FD.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Shabnam;
+  src: url('/fonts/Shabnam-Light-FD.eot');
+  src: url('/fonts/Shabnam-Light-FD.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/Shabnam-Light-FD.woff2') format('woff2'),
+       url('/fonts/Shabnam-Light-FD.woff') format('woff'),
+       url('/fonts/Shabnam-Light-FD.ttf') format('truetype');
+  font-weight: 300;
+}
+
   ::selection {
     color: ${theme.colors.bg};
     background: ${theme.colors.primary};
   }
   body {
+  direction: rtl
     background: ${theme.colors.bg};
     color: ${theme.default};
     @media ${media.phone} {
@@ -30,6 +62,7 @@ injectGlobal`
   }
   h1, h2, h3, h4 {
     color: ${theme.colors.grey.dark};
+  
   }
   blockquote {
     font-style: italic;
@@ -62,6 +95,10 @@ injectGlobal`
 const Footer = styled.footer`
   text-align: center;
   padding: 3rem 0;
+  p {
+  direction: ltr;
+    margin: 0;
+  }
   span {
     font-size: 0.75rem;
   }
@@ -72,7 +109,7 @@ const Layout = ({ children }) => (
     query={graphql`
       query LayoutQuery {
         site {
-          buildTime(formatString: "DD.MM.YYYY")
+          buildTime
         }
       }
     `}
@@ -82,9 +119,9 @@ const Layout = ({ children }) => (
           <SEO />
           {children}
           <Footer>
-            &copy; 2018 by John Doe. All rights reserved. <br />
-            <a href="https://github.com/ahmadawais/gatsby-minimal-blog">GitHub Repository</a> <br />
-            <span>Last build: {data.site.buildTime}</span>
+            <p>اجرا شده با ❤️ در تهران</p>
+            <a href="https://github.com/ReactConf/blog" target="_blank">سورس کد</a> <br />
+            <span> آخرین نسخه بیلد: {moment(data.site.buildTime).format('jYYYY/jMM/jD')}</span>
           </Footer>
         </React.Fragment>
       </ThemeProvider>

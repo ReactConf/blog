@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { Layout, Wrapper, Header, Subline, Article, SectionTitle } from 'components';
 import { media } from '../utils/media';
 import config from '../../config/SiteConfig';
+import categoryName from '../utils/category-name';
 
 const Content = styled.div`
   grid-column: 2;
@@ -36,9 +37,9 @@ const Category = props => {
           <Link to="/">{config.siteTitle}</Link>
         </Header>
         <Content>
-          <SectionTitle>Category &ndash; {category}</SectionTitle>
+          <SectionTitle>دسته بندی &ndash; {categoryName[category]}</SectionTitle>
           <Subline sectionTitle>
-            {subline} (See <Link to="/categories">all categories</Link>)
+            نمایش <Link to="/categories">همه دسته بندی ها</Link>
           </Subline>
           {edges.map(post => (
             <Article
@@ -82,13 +83,13 @@ export const postQuery = graphql`
         node {
           frontmatter {
             title
-            date(formatString: "DD.MM.YYYY")
+            date
             category
           }
           fields {
             slug
           }
-          excerpt(pruneLength: 200)
+          excerpt(pruneLength: 100)
           timeToRead
         }
       }
