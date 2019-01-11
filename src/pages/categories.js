@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import kebabCase from 'lodash/kebabCase';
 import { Layout, Wrapper, Header, SectionTitle } from 'components';
 import { media } from '../utils/media';
-
+import categoryName from '../utils/category-name';
 import config from '../../config/SiteConfig';
 
 const Content = styled.div`
@@ -38,15 +38,15 @@ const Category = ({
 }) => (
   <Layout>
     <Wrapper>
-      <Helmet title={`Categories | ${config.siteTitle}`} />
+      <Helmet title={`|  دسته بندی ها ${config.siteTitle}`} />
       <Header>
         <Link to="/">{config.siteTitle}</Link>
       </Header>
       <Content>
-        <SectionTitle>Categories</SectionTitle>
+        <SectionTitle>دسته بندی ها</SectionTitle>
         {group.map(category => (
           <Title key={category.fieldValue}>
-            <Link to={`/categories/${kebabCase(category.fieldValue)}`}>{category.fieldValue}</Link> ({
+            <Link to={`/categories/${kebabCase(category.fieldValue)}`}>{categoryName[category.fieldValue]}</Link> ({
               category.totalCount
             })
           </Title>

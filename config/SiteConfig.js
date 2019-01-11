@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
 
-  siteTitle: 'ReactConf Blog | بلاگ همایش ری اکت', // Navigation and Site Title
+  siteTitle: 'ReactConf Blog | وبلاگ گردهمایی جاوا اسکریپت و ری اکت', // Navigation and Site Title
   siteTitleAlt: 'Minimal Blog - Gatsby Starter', // Alternative Site title for SEO
   siteUrl: 'https://blog.reactconf.ir', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
