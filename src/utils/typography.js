@@ -6,7 +6,7 @@ const typography = new Typography({
   title: 'Reactconf Blog',
   baseFontSize: config.baseFontSize,
   baseLineHeight: 2,
-  scaleRatio: 3.157,
+  scaleRatio: 2,
   headerFontFamily: [config.headerFontFamily, 'sans-serif'],
   bodyFontFamily: [config.bodyFontFamily, 'sans-serif'],
   headerWeight: 700,

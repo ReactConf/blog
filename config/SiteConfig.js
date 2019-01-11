@@ -24,5 +24,5 @@ module.exports = {
   // Settings for typography.js
   headerFontFamily: 'Shabnam',
   bodyFontFamily: 'Shabnam',
-  baseFontSize: '16px',
+  baseFontSize: '18px',
 };
