@@ -1,8 +1,8 @@
 {
 	"name": "reactconf-blog",
-	"description": "Gatsby Starter Kit - A Minimal Blog",
+	"description": "reactconf.ir blog",
 	"version": "1.0.0",
-	"author": "Ahmad Awais <https://twitter.com/MrAhmadAwais/>",
+	"author": "reactconf",
 	"dependencies": {
 		"babel-plugin-styled-components": "^1.7.1",
 		"gatsby": "^2.0.0",
