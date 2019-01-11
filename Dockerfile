@@ -7,7 +7,7 @@ RUN apt-get install apt-transport-https
 
 WORKDIR /opt/app
 COPY . /opt/app
-RUN npm install &&  && npm run dev && npm run build
+RUN npm install && npm run build
 
 EXPOSE 4000
 
