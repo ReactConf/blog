@@ -5,5 +5,5 @@ chown node:node -R .
 
 
 npm install
-
+gatsby develop
 npm run build
