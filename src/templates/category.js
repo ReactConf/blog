@@ -32,7 +32,7 @@ const Category = props => {
   return (
     <Layout>
       <Wrapper>
-        <Helmet title={`${category} | ${config.siteTitle}`} />
+        <Helmet title={`${categoryName[category]} | ${config.siteTitle}`} />
         <Header>
           <Link to="/">{config.siteTitle}</Link>
         </Header>
@@ -89,7 +89,7 @@ export const postQuery = graphql`
           fields {
             slug
           }
-          excerpt(pruneLength: 100)
+          excerpt(pruneLength: 600)
           timeToRead
         }
       }
