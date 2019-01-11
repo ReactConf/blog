@@ -34,6 +34,10 @@ const Content = styled.article`
 
 const Title = styled.h1`
   margin-bottom: 1rem;
+  font-size : 2rem;
+  @media ${media.tablet} {
+    font-size : 1.25rem;
+  }
 `;
 
 const PostContent = styled.div`
