@@ -104,7 +104,11 @@ export const IndexQuery = graphql`
             date
             category
           }
-          excerpt(pruneLength: 600)
+          excerpt(
+           format: PLAIN
+           pruneLength: 400
+           truncate: true
+          )
           timeToRead
         }
       }

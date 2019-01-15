@@ -89,7 +89,11 @@ export const postQuery = graphql`
           fields {
             slug
           }
-          excerpt(pruneLength: 600)
+           excerpt(
+           format: PLAIN
+           pruneLength: 400
+           truncate: true
+          )
           timeToRead
         }
       }
